@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchPrefectureList, fetchPopulationData } from "./fetchers";
 import PrefectureList from "./components/PrefectureList";
+import PopulationChart from "./components/PopulationChart";
 import "./App.css";
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
         prefectureList={prefectureList}
         togglePrefectureCheckbox={togglePrefectureCheckbox}
       />
+      <PopulationChart chartDataList={chartDataList} />
     </div>
   );
 }
