@@ -4,6 +4,14 @@ import PrefectureList from "./components/PrefectureList";
 import "./App.css";
 
 function App() {
+  /**
+   * @typedef {Object} prefecture
+   * @property {number} prefCode
+   * @property {string} prefName
+   */
+  /**
+   * @type {[Array<prefecture>, function]}
+   */
   const [prefectureList, setPrefectureList] = useState([]);
   useEffect(() => {
     (async () => {
