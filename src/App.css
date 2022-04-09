@@ -1,0 +1,31 @@
+#app {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(159, 157, 157);
+}
+
+#prefecture-list {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  #app {
+    width: 90%;
+    border: 1px solid;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #app {
+    width: 80%;
+  }
+}

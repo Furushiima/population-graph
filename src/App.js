@@ -56,12 +56,14 @@ function App() {
     }
   };
   return (
-    <div className="App">
-      <div className="App-header">総人口推移グラフ</div>
-      <PrefectureList
-        prefectureList={prefectureList}
-        togglePrefectureCheckbox={togglePrefectureCheckbox}
-      />
+    <div id="app">
+      <div id="header">都道府県別の総人口推移グラフ</div>
+      <div id="prefecture-list">
+        <PrefectureList
+          prefectureList={prefectureList}
+          togglePrefectureCheckbox={togglePrefectureCheckbox}
+        />
+      </div>
       <PopulationChart chartDataList={chartDataList} />
     </div>
   );
