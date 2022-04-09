@@ -1,9 +1,10 @@
+import "./PrefectureCheckbox.css";
 import PropTypes from "prop-types";
 
 function PrefectureCheckbox(props) {
   const { prefCode, prefName, togglePrefectureCheckbox } = props;
   return (
-    <div>
+    <div className="PrefectureCheckbox">
       <input
         type="checkbox"
         onChange={() => {
