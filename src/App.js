@@ -23,7 +23,7 @@ function App() {
   /**
    * @typedef {Object} populationPerYear
    * @property {number} year
-   * @property {value} number
+   * @property {number} value
    */
   /**
    * @typedef {Object} ChartData
