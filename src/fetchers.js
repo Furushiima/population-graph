@@ -1,13 +1,8 @@
 import axios from "axios";
 
-const myAxios = axios.create({
-  baseURL: "https://opendata.resas-portal.go.jp/",
-  headers: { "X-API-KEY": process.env.REACT_APP_X_API_KEY },
-});
-
 async function fetchPrefectureList() {
-  const prefectureList = await myAxios
-    .get("api/v1/prefectures")
+  const prefectureList = await axios
+    .get("/.netlify/functions/prefectures")
     .then((response) => {
       if (!response.data.result) {
         throw new Error(response.data.message);
@@ -22,8 +17,8 @@ async function fetchPrefectureList() {
 }
 
 async function fetchPopulationData(prefCode) {
-  const PopulationData = await myAxios
-    .get("api/v1/population/composition/perYear", {
+  const PopulationData = await axios
+    .get("/.netlify/functions/populationData", {
       params: {
         prefCode,
         cityCode: "-",
