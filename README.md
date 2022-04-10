@@ -4,16 +4,19 @@
 
 都道府県にチェックを入れると, 選択された都道府県の人口構成の折れ線グラフを表示します.
 
-## ESAS API
+## API
 
-RESAS(地域経済分析システム) API を使用しています.
+情報の取得には, RESAS(地域経済分析システム)API を使用しています.
 https://opendata.resas-portal.go.jp/
+
+クライアントに API キーを隠して, RESAS API を叩くために Netlify Functions を使用しています.
+https://docs.netlify.com/functions/overview/
 
 ## 開発環境構築
 
 1. git clone
 2. プロジェクトのルートディレクトリに`.env`ファイルを作成
-3. `.env`に RESAS の API キー(上記の url で作成)を以下のように記述
+3. 作成した`.env`に RESAS の API キー(上記の url で作成)を以下のように記述
    ```
    REACT_APP_X_API_KEY="your_APP_X_API_KEY"
    ```
@@ -23,10 +26,27 @@ https://opendata.resas-portal.go.jp/
    ```
 5. 開発サーバー起動
    ```
-   npm start
+   npm run serve:dev
    ```
 
-※ 以下は Create React App によって自動生成された README
+## デプロイ
+
+Netlify の設定
+
+- Build settings
+  - Build command
+    ```
+    CI='' npm run build
+    ```
+- Environment variables
+  - REACT_APP_X_API_KEY: •••••••
+
+<br>
+※以下はCreate React Appによって自動生成されたREADME
+
+## URL
+
+https://sunny-boba-b619dd.netlify.app/
 
 # Getting Started with Create React App
 
