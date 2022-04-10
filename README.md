@@ -1,3 +1,33 @@
+# ゆめみ課題
+
+## 都道府県別の総人口推移グラフ
+
+都道府県にチェックを入れると, 選択された都道府県の人口構成の折れ線グラフを表示します.
+
+## ESAS API
+
+RESAS(地域経済分析システム) API を使用しています.
+https://opendata.resas-portal.go.jp/
+
+## 開発環境構築
+
+1. git clone
+2. プロジェクトのルートディレクトリに`.env`ファイルを作成
+3. `.env`に RESAS の API キー(上記の url で作成)を以下のように記述
+   ```
+   REACT_APP_X_API_KEY="your_APP_X_API_KEY"
+   ```
+4. 必要なパッケージのインストール
+   ```
+   npm install
+   ```
+5. 開発サーバー起動
+   ```
+   npm start
+   ```
+
+※ 以下は Create React App によって自動生成された README
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
