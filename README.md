@@ -23,7 +23,7 @@ https://opendata.resas-portal.go.jp/
    ```
 5. 開発サーバー起動
    ```
-   npm start
+   npm run serve:dev
    ```
 
 ※ 以下は Create React App によって自動生成された README
