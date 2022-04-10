@@ -8,9 +8,15 @@ const myAxios = axios.create({
 async function fetchPrefectureList() {
   const prefectureList = await myAxios
     .get("api/v1/prefectures")
-    .then((response) => response.data.result)
+    .then((response) => {
+      if (!response.data.result) {
+        throw new Error(response.data.message);
+      } else {
+        return response.data.result;
+      }
+    })
     .catch((error) => {
-      console.log(error.response);
+      console.log(error);
     });
   return prefectureList;
 }
@@ -23,9 +29,15 @@ async function fetchPopulationData(prefCode) {
         cityCode: "-",
       },
     })
-    .then((response) => response.data.result.data[0].data)
+    .then((response) => {
+      if (!response.data.result) {
+        throw new Error(response.data.message);
+      } else {
+        return response.data.result.data[0].data;
+      }
+    })
     .catch((error) => {
-      console.log(error.response);
+      console.log(error);
     });
   return PopulationData;
 }
